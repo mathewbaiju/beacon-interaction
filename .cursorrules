@@ -1,0 +1,29 @@
+# Beacon Interaction Rules
+# Automated service investigation and Beacon catalog workflows
+
+## Default Service Investigation Workflow
+When user asks to investigate a service:
+1. **Start with Beacon URL**: https://beacon.autodesk.com/catalog?filters%5Buser%5D=all&filters%5Bkind%5D=component&limit=20
+2. **Navigate to specific service**: https://beacon.autodesk.com/catalog/default/component/{service-name}
+3. **Collect comprehensive data**:
+   - Service owner and contacts
+   - Deployment regions
+   - Build status and history
+   - Dependencies (upstream/downstream)
+   - API endpoints
+   - Health metrics
+
+## Quick Commands
+- `investigate {SERVICE}` → Full service investigation
+- `check build {SERVICE}` → Latest build status
+- `health {SERVICE}` → Health and deployment status
+- `deps {SERVICE}` → Dependency analysis
+
+## MCP Integration
+- Use Playwright MCP for Beacon navigation
+- Prefer automated workflows over manual steps
+- Always capture structured data for analysis
+
+## Standard URLs
+- Catalog: https://beacon.autodesk.com/catalog?filters%5Buser%5D=all&filters%5Bkind%5D=component&limit=20
+- Service template: https://beacon.autodesk.com/catalog/default/component/{service-name}
