@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon Interaction Toolkit - Presentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .slide {
+            display: none;
+            padding: 60px 80px;
+            min-height: 600px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slide h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+        }
+        
+        .slide h2 {
+            color: #34495e;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .slide h3 {
+            color: #2980b9;
+            font-size: 1.6em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .slide h4 {
+            color: #27ae60;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+        
+        .slide ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        
+        .slide li {
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .before, .after {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .before {
+            background: #ffebee;
+            border: 2px solid #e74c3c;
+        }
+        
+        .after {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        .navigation {
+            text-align: center;
+            padding: 20px;
+            background: #ecf0f1;
+        }
+        
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: #2980b9;
+        }
+        
+        .nav-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        
+        .notes {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #495057;
+        }
+        
+        .notes-header {
+            font-weight: bold;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+        
+        @media print {
+            .navigation { display: none; }
+            .slide { display: block !important; page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>🎯 Beacon Interaction Toolkit</h1>
+            <h2>Making Service Investigation Simple for TPMs</h2>
+            <div class="subtitle">Transforming 45-minute manual processes into 2-minute automated workflows</div>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (30 seconds):</div>
+                Welcome everyone! I'm here to show you how to save 90% of your time on service investigations. This is about the Beacon Interaction Toolkit - an automation solution that transforms how TPMs work with Autodesk's Beacon portal. By the end of this 10-minute presentation, you'll understand how to go from 45-minute manual processes to 2-minute automated workflows. This isn't theoretical - it's a working solution that's already saving teams hours every week.
+            </div>
+            <div class="slide-counter">1 / 10</div>
+        </div>
+
+        <!-- Slide 2: Problem -->
+        <div class="slide">
+            <h2>📖 The Problem We Face</h2>
+            <h3>Manual Service Investigation is Painful</h3>
+            
+            <ul>
+                <li><span class="emoji">😴</span><strong>Takes 30-45 minutes per service</strong></li>
+                <li><span class="emoji">🖱️</span><strong>Clicking through 10+ Beacon pages</strong></li>
+                <li><span class="emoji">📋</span><strong>Copy-pasting information manually</strong></li>
+                <li><span class="emoji">🧠</span><strong>Easy to miss critical details</strong></li>
+                <li><span class="emoji">😤</span><strong>Repetitive, boring work</strong></li>
+            </ul>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1 minute):</div>
+                Let's start with a scenario we all know: It's 2 AM, a service is down, and you need to quickly understand who owns it, where it's deployed, and what changed recently. The current process is painful: Open Beacon, search for the service, click through Overview tab, then Build & Deploy, then Dependencies, then APIs. You're manually copying information into documents, checking multiple regions, looking up contact information. This takes 30-45 minutes PER SERVICE, and with complex dependencies, you might need to investigate 5-10 services.
+            </div>
+            <div class="slide-counter">2 / 10</div>
+        </div>
+
+        <!-- Slide 3: Solution -->
+        <div class="slide">
+            <h2>🚀 The Solution - Automation</h2>
+            <h3>One Command = Complete Analysis</h3>
+            
+            <div class="code-block">
+Input: "Investigate service: WIPDM"
+Output: Complete service report in 2 minutes
+            </div>
+            
+            <h3>What You Get:</h3>
+            <ul>
+                <li><span class="emoji">📊</span><strong>Service details & ownership</strong></li>
+                <li><span class="emoji">🌍</span><strong>Multi-region deployment status</strong></li>
+                <li><span class="emoji">🏗️</span><strong>Latest build information</strong></li>
+                <li><span class="emoji">👥</span><strong>Team contacts & escalation</strong></li>
+                <li><span class="emoji">🔗</span><strong>Dependencies & relationships</strong></li>
+            </ul>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1 minute):</div>
+                Here's the transformation: Instead of 45 minutes of clicking, you type one sentence and get a complete report in 2 minutes. The system automatically navigates Beacon, extracts all relevant information, and presents it in a structured format. You get everything you need: who owns the service, where it's deployed, current health status, recent changes, and who to contact. This isn't just faster - it's more thorough and consistent than manual investigation.
+            </div>
+            <div class="slide-counter">3 / 10</div>
+        </div>
+
+        <!-- Slide 4: Technology -->
+        <div class="slide">
+            <h2>🤖 How It Works - MCP Technology</h2>
+            <h3>MCP = Your Smart Assistant</h3>
+            
+            <div class="code-block">
+Your Request → Claude AI → MCP Server → Beacon Portal
+     ↓              ↓           ↓            ↓
+"Investigate    Understands   Automates    Extracts
+ service X"     what to do    web clicks   information
+            </div>
+            
+            <h3>Think of it as:</h3>
+            <ul>
+                <li><span class="emoji">🧠</span><strong>AI brain</strong> that understands your intent</li>
+                <li><span class="emoji">🤖</span><strong>Automation hands</strong> that navigate websites</li>
+                <li><span class="emoji">📊</span><strong>Data extraction</strong> that never misses details</li>
+            </ul>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1 minute):</div>
+                The technology behind this is called MCP - Model Context Protocol. Think of it as having a super-efficient assistant who never gets tired and never forgets steps. When you make a request, Claude AI understands what you want to accomplish. The MCP server then automates the actual web navigation - clicking through Beacon pages, extracting data. The beauty is that you don't need to understand the technology - you just need to know how to ask for what you want.
+            </div>
+            <div class="slide-counter">4 / 10</div>
+        </div>
+
+        <!-- Slide 5: Demo -->
+        <div class="slide">
+            <h2>⚡ Before vs After Comparison</h2>
+            
+            <div class="comparison">
+                <div class="before">
+                    <h4>Traditional Way: 45 minutes 😵‍💫</h4>
+                    <ol>
+                        <li>Search Beacon manually</li>
+                        <li>Click through 6+ tabs</li>
+                        <li>Copy-paste to documents</li>
+                        <li>Look up contacts separately</li>
+                        <li>Check each region individually</li>
+                    </ol>
+                </div>
+                
+                <div class="after">
+                    <h4>With Toolkit: 2 minutes ⚡</h4>
+                    <ol>
+                        <li>Type: "Investigate service: WIPDM"</li>
+                        <li>Get complete automated report</li>
+                        <li><strong>That's 2,250% faster!</strong></li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1.5 minutes):</div>
+                Let me show you the dramatic difference with a concrete example. Traditional way: You open Beacon, search for WIPDM, click through multiple tabs, copy information, look up contacts - this easily takes 45 minutes. With the toolkit: You type one sentence and in 2 minutes you have a comprehensive report. That's not just a little faster - that's transformational. If you investigate 5 services per week, that's over 3.5 hours saved weekly.
+            </div>
+            <div class="slide-counter">5 / 10</div>
+        </div>
+
+        <!-- Slide 6: Templates -->
+        <div class="slide">
+            <h2>📋 Pre-Built Templates</h2>
+            <h3>Ready-to-Use Workflows</h3>
+            
+            <div class="highlight">
+                <h4><span class="emoji">🔍</span>Service Investigation</h4>
+                <ul>
+                    <li>Complete service analysis</li>
+                    <li>Owner identification</li>
+                    <li>Health verification</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <h4><span class="emoji">🚨</span>Incident Response</h4>
+                <ul>
+                    <li>Quick health checks</li>
+                    <li>Recent changes analysis</li>
+                    <li>Contact discovery</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <h4><span class="emoji">🏗️</span>Build Monitoring</h4>
+                <ul>
+                    <li>Deployment tracking</li>
+                    <li>Change impact analysis</li>
+                    <li>Multi-region status</li>
+                </ul>
+            </div>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1 minute):</div>
+                You don't start from scratch - the toolkit comes with pre-built templates for common scenarios. Service Investigation template gives you everything for routine analysis. Incident Response template is optimized for 2 AM emergencies. Build Monitoring templates help track deployments. These are based on real TPM workflows and best practices. You can use them as-is or customize them for your team's specific needs.
+            </div>
+            <div class="slide-counter">6 / 10</div>
+        </div>
+
+        <!-- Slide 7: Real Example -->
+        <div class="slide">
+            <h2>🎯 Real Impact Example</h2>
+            <h3>Incident Response Scenario</h3>
+            <div class="subtitle">🚨 2 AM: WIPDM service alert</div>
+            
+            <div class="comparison">
+                <div class="before">
+                    <h4>Without Toolkit:</h4>
+                    <ul>
+                        <li>😰 45 minutes of manual investigation</li>
+                        <li>📞 Risk of waking wrong people</li>
+                        <li>🔍 Missing critical context</li>
+                    </ul>
+                </div>
+                
+                <div class="after">
+                    <h4>With Toolkit:</h4>
+                    <div class="code-block">"Emergency investigation: WIPDM service down"</div>
+                    <p><strong>2 minutes later:</strong></p>
+                    <ul>
+                        <li>✅ Multi-region status confirmed</li>
+                        <li>👥 Correct on-call contacts identified</li>
+                        <li>🔄 Recent changes flagged as potential cause</li>
+                        <li>🎯 Clear action plan ready</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1 minute):</div>
+                Real-world scenario: It's 2 AM, WIPDM service is down, customers are affected. Without the toolkit: You're frantically clicking through Beacon while tired, taking 45 minutes while the service is down. With the toolkit: You type one command, and in 2 minutes you know exactly what's happening, who to contact, and what likely caused the issue. This isn't just about saving time - it's about reducing mean time to resolution for incidents.
+            </div>
+            <div class="slide-counter">7 / 10</div>
+        </div>
+
+        <!-- Slide 8: Getting Started -->
+        <div class="slide">
+            <h2>🚀 Getting Started</h2>
+            <h3>3 Simple Steps to Transform Your Workflow</h3>
+            
+            <div class="highlight">
+                <h4>Step 1: One-Time Setup (15 minutes)</h4>
+                <ul>
+                    <li>Install Claude Desktop</li>
+                    <li>Configure MCP server</li>
+                    <li>Test with known service</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <h4>Step 2: Learn Basic Patterns (30 minutes)</h4>
+                <div class="code-block">
+"Investigate service: {NAME}"
+"Check health of {NAME}"
+"Analyze latest build for {NAME}"
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h4>Step 3: Customize & Scale (ongoing)</h4>
+                <ul>
+                    <li>Create team templates</li>
+                    <li>Share successful patterns</li>
+                    <li>Measure time savings</li>
+                </ul>
+            </div>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1.5 minutes):</div>
+                Getting started is surprisingly simple. Step 1 is a one-time 15-minute setup. Step 2 is learning 3-4 core commands that handle 80% of your needs. Step 3 is where the real value multiplies - creating templates for your workflows and sharing them with your team. The repository has detailed setup instructions. Most teams are fully productive within their first week.
+            </div>
+            <div class="slide-counter">8 / 10</div>
+        </div>
+
+        <!-- Slide 9: Business Impact -->
+        <div class="slide">
+            <h2>📈 Business Impact & ROI</h2>
+            <h3>Quantified Benefits</h3>
+            
+            <div class="highlight">
+                <h4>Time Savings</h4>
+                <ul>
+                    <li><strong>Before:</strong> 45 minutes per investigation</li>
+                    <li><strong>After:</strong> 2 minutes per investigation</li>
+                    <li><strong>Savings:</strong> 96% time reduction</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <h4>Quality Improvements</h4>
+                <ul>
+                    <li>✅ Zero missed details</li>
+                    <li>✅ Consistent process every time</li>
+                    <li>✅ Standardized documentation</li>
+                    <li>✅ Faster incident response</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <h4>Team Transformation</h4>
+                <ul>
+                    <li>😊 Less tedious work, more strategic focus</li>
+                    <li>📈 Higher job satisfaction</li>
+                    <li>🚀 Improved service reliability</li>
+                </ul>
+            </div>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (1 minute):</div>
+                Let's talk quantified business impact. 96% time reduction means if you do 10 investigations per week, you save 7+ hours weekly. Quality improves because the process is consistent and thorough. Teams report higher job satisfaction. From a business perspective, faster incident response means better customer experience and reduced downtime costs. This is a transformation in how technical teams operate.
+            </div>
+            <div class="slide-counter">9 / 10</div>
+        </div>
+
+        <!-- Slide 10: Call to Action -->
+        <div class="slide">
+            <h2>🎉 Start Your Transformation Today</h2>
+            
+            <div class="highlight">
+                <h3>Next Steps:</h3>
+                <ol>
+                    <li><span class="emoji">🔗</span><strong>Visit:</strong> github.com/mathewbaiju/beacon-interaction</li>
+                    <li><span class="emoji">⚙️</span><strong>Setup:</strong> Follow 15-minute quick start</li>
+                    <li><span class="emoji">🎯</span><strong>Try:</strong> Your first automated investigation</li>
+                    <li><span class="emoji">📊</span><strong>Measure:</strong> Track your time savings</li>
+                    <li><span class="emoji">📢</span><strong>Share:</strong> Help your team transform too</li>
+                </ol>
+            </div>
+            
+            <div class="code-block">
+Ready to save 43 minutes per investigation?
+            </div>
+            
+            <h3 style="text-align: center;">Questions?</h3>
+            
+            <div class="notes">
+                <div class="notes-header">Speaker Notes (30 seconds):</div>
+                Here's how to get started today. Visit the GitHub repository - all setup instructions are there. The quick start takes 15 minutes. Try it with a service you know well. Track your time savings - most people are amazed. Share it with your team. I'm happy to take questions now. Who's ready to stop spending 45 minutes on tasks that should take 2 minutes?
+            </div>
+            <div class="slide-counter">10 / 10</div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="changeSlide(-1)" id="prevBtn">❮ Previous</button>
+        <button class="nav-btn" onclick="changeSlide(1)" id="nextBtn">Next ❯</button>
+        <button class="nav-btn" onclick="window.print()" style="margin-left: 20px;">🖨️ Print</button>
+        <button class="nav-btn" onclick="downloadPdf()" style="background: #e74c3c;">📄 Save as PDF</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function changeSlide(n) {
+            if (currentSlide + n >= 0 && currentSlide + n < totalSlides) {
+                showSlide(currentSlide + n);
+            }
+        }
+
+        function downloadPdf() {
+            alert('To save as PDF: Use your browser\'s Print function (Ctrl+P or Cmd+P) and select "Save as PDF" as the destination.');
+            window.print();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'Home') showSlide(0);
+            if (e.key === 'End') showSlide(totalSlides - 1);
+        });
+
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
