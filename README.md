@@ -1,6 +1,6 @@
 # Beacon Interaction
 
-A dedicated toolkit for automating Beacon catalog interactions and service investigations.
+Automation toolkit for Technical Program Managers to efficiently interact with Autodesk's Internal Developer Portal (Beacon). Features MCP server integration, service investigation workflows, build monitoring, and reusable prompt templates for streamlined DevOps operations.
 
 ![Happy TPM](https://github.com/user-attachments/assets/0f11d60f-e056-4dec-a75b-0be04ee6cf88)
 
