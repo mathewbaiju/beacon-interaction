@@ -2,6 +2,9 @@
 
 A dedicated toolkit for automating Beacon catalog interactions and service investigations.
 
+![Happy TPM](https://github.com/user-attachments/assets/0f11d60f-e056-4dec-a75b-0be04ee6cf88)
+
+
 ## Purpose
 
 This repository contains tools and automation for:
